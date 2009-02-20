@@ -20,23 +20,31 @@ module UsernameCheck
   }
   
   def self.check_all(name)
-    SITES.inject({}) do |memo, site_and_options|
-      site, address, condition, *args = site_and_options.flatten
-      condition ||= :is_200
-      rendered_address = 
-        if address.include?('%s')
-          address % name
-        else
-          address + name
+    memo_mutex = Mutex.new
+    memo = {}
+    threads = []
+    SITES.each do |site_and_options|
+      threads << Thread.new do
+        site, address, condition, *args = site_and_options.flatten
+        condition ||= :is_200
+        rendered_address = 
+          if address.include?('%s')
+            address % name
+          else
+            address + name
+          end
+      
+      
+        service = site.to_s % name
+        in_use = send(condition, rendered_address, *args)
+        memo_mutex.synchronize do
+          yield(service, in_use) if block_given?
+          memo[service] = in_use
         end
-      
-      
-      service = site.to_s % name
-      in_use = send(condition, rendered_address, *args)
-      yield(service, in_use) if block_given?
-      memo[service] = in_use
-      memo
+      end
     end
+    threads.each { |t| t.join }
+    memo
   end
 
   def self.get(address)
