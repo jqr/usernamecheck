@@ -1,6 +1,8 @@
 bin/usernamecheck
 CHANGELOG
 lib/username_check.rb
+LICENSE
+Manifest
 Rakefile
 README.rdoc
-Manifest
+usernamecheck.gemspec

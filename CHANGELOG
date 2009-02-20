@@ -1,1 +1,4 @@
+v0.0.2. UsernameCheck.check_all accepts a block.
+        UsernameCheck.check_all is multi-threaded.
+        
 v0.0.1. Initial release.
