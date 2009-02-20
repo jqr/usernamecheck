@@ -29,8 +29,12 @@ module UsernameCheck
         else
           address + name
         end
-        
-      memo[site.to_s % name] = send(condition, rendered_address, *args)
+      
+      
+      service = site.to_s % name
+      in_use = send(condition, rendered_address, *args)
+      yield(service, in_use) if block_given?
+      memo[service] = in_use
       memo
     end
   end

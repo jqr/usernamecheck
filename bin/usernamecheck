@@ -7,7 +7,7 @@ REDCODE   = 31
 GREENCODE = 32
 
 puts "Checking, please wait..."
-UsernameCheck.check_all(ARGV.first).each do |service, used|
+UsernameCheck.check_all(ARGV.first) do |service, used|
   code = used ? REDCODE : GREENCODE
   availability = used ? 'in use' : 'available'
   puts "\e[#{ code }m#{service} #{availability}\e[0m"
