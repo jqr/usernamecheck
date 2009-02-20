@@ -36,7 +36,6 @@ module UsernameCheck
   end
 
   def self.get(address)
-    puts "getting #{address}"
     HTTParty.get("http://#{address}")
   end
   
