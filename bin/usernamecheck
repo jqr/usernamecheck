@@ -6,7 +6,9 @@ require File.join(File.dirname(__FILE__), '..', 'lib', 'username_check')
 REDCODE   = 31
 GREENCODE = 32
 
+puts "Checking, please wait..."
 UsernameCheck.check_all(ARGV.first).each do |service, used|
   code = used ? REDCODE : GREENCODE
-  puts "\e[#{ code }m#{service}\e[0m"
+  availability = used ? 'in use' : 'available'
+  puts "\e[#{ code }m#{service} #{availability}\e[0m"
 end
