@@ -16,7 +16,8 @@ module UsernameCheck
     :hulu => 'hulu.com/profiles/',
     :disqus => 'disqus.com/people/',
     :linkedin => ['www.linkedin.com/in/', :match, 'contact settings'],
-    :stumbleupon => ['stumbleupon.com/stumbler/', :not_match, 'no such username']
+    :stumbleupon => ['stumbleupon.com/stumbler/', :not_match, 'no such username'],
+    :soundcloud => 'soundcloud.com/',
   }
   
   def self.check_all(name)
