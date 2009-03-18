@@ -18,6 +18,8 @@ module UsernameCheck
     :linkedin => ['www.linkedin.com/in/', :match, 'contact settings'],
     :stumbleupon => ['stumbleupon.com/stumbler/', :not_match, 'no such username'],
     :soundcloud => 'soundcloud.com/',
+    :hulu => 'hulu.com/profiles/',
+    :slashdot => ['slashdot.org/~', :not_match, 'does not exist'],
   }
   
   def self.check_all(name)
