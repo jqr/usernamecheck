@@ -20,6 +20,7 @@ module UsernameCheck
     :soundcloud => 'soundcloud.com/',
     :hulu => 'hulu.com/profiles/',
     :slashdot => ['slashdot.org/~', :not_match, 'does not exist'],
+    :plurk => ['plurk.com/', :not_match, 'register this nick name'],
   }
   
   def self.check_all(name)
