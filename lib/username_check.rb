@@ -21,6 +21,7 @@ module UsernameCheck
     :hulu => 'hulu.com/profiles/',
     :slashdot => ['slashdot.org/~', :not_match, 'does not exist'],
     :plurk => ['plurk.com/', :not_match, 'register this nick name'],
+    :myopenid => '%s.myopenid.com',
   }
   
   def self.check_all(name)
