@@ -22,6 +22,13 @@ module UsernameCheck
     :slashdot => ['slashdot.org/~', :not_match, 'does not exist'],
     :plurk => ['plurk.com/', :not_match, 'register this nick name'],
     :myopenid => '%s.myopenid.com',
+    :tumblr => ['%s.tumblr.com', :not_match, "We couldn't find the page you were looking for"],
+    :vimeo => 'vimeo.com/',
+    :youtube => 'youtube.com/',
+    :deviantart => '%s.deviantart.com',
+    :reddit => 'reddit.com/user/',
+    :livejournal => 'community.livejournal.com/',
+    :ustream => 'ustream.tv/',
   }
   
   def self.check_all(name)
@@ -62,7 +69,7 @@ module UsernameCheck
     rescue
     end
   end
-  
+
   def self.match(address, regexp)
     !!(get(address).body =~ regexify(regexp))
   end
