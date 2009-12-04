@@ -1,6 +1,6 @@
 = Usernamecheck
 
-Adds a usernamecheck command.
+Checks username availability on many populer sites.
 
 == Examples
 
@@ -8,7 +8,7 @@ Adds a usernamecheck command.
   
 == Install
 
-  gem install jqr-usernamecheck --source http://gems.github.com
+  gem install usernamecheck
   
 Homepage:: http://github.com/jqr/usernamecheck
 Copyright:: Copyright (c) 2008 Elijah Miller <mailto:elijah.miller@gmail.com>, released under the MIT license.

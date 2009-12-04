@@ -2,7 +2,7 @@ require 'spec/rake/spectask'
 
 require 'echoe'
 Echoe.new 'usernamecheck' do |p|
-  p.description     = "A command line replacement for usernamecheck.com."
+  p.description     = "Checks username availability on many populer sites."
   p.url             = "http://usernamecheck.rubyforge.org"
   p.author          = "Elijah Miller"
   p.email           = "elijah.miller@gmail.com"
