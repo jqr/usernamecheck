@@ -10,5 +10,5 @@ Adds a usernamecheck command.
 
   gem install jqr-usernamecheck --source http://gems.github.com
   
-Homepage:: github.com/jqr/usernamecheck
+Homepage:: http://github.com/jqr/usernamecheck
 Copyright:: Copyright (c) 2008 Elijah Miller <mailto:elijah.miller@gmail.com>, released under the MIT license.
